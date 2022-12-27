@@ -64,17 +64,16 @@
 
                 <div class="form-group">
                     <label for="Department"> Department </label>
-                    
+
                     <select name="Department" id="Department" [(ngModel)]="Department" class="form-control">
-                        <option value="Help Desk">Help Desk</option>
-                        <option value="RH">RH</option>
-                        <option value="IT">IT</option>
-                        <option value="Paroll">Paroll</option>
+                        <option *ngFor="let department of departments" value="{{department.id}}">
+                            {{department.Name}}
+                        </option>
                     </select>
-                       
-                
+
+
                 </div>
-                
+
             </div>
         </div>
         <div class="card-footer">

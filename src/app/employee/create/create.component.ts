@@ -1,5 +1,6 @@
 import { NgForm } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { Department } from 'src/app/models/Department/Department.model'
 
 @Component({
   selector: 'app-create',
@@ -14,8 +15,14 @@ export class CreateComponent implements OnInit {
   phoneNumber: number;
   contactPreference: string = "PhoneNumber";
   IsActive: boolean = true;
-  Department: string = "Help Desk";
+  Department: number = 1;
 
+  departments: Department[] = [
+    { id: 1, Name: "Help Desk" },
+    { id: 2, Name: "RH" },
+    { id: 3, Name: "IT" },
+    { id: 4, Name: "Logistic" },
+  ]
   constructor() { }
 
   ngOnInit(): void {
