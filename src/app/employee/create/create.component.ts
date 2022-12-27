@@ -12,7 +12,7 @@ export class CreateComponent implements OnInit {
   Email: string = "";
   Gender: string = "";
   phoneNumber: number;
-  contactPreference: string = "";
+  contactPreference: string = "PhoneNumber";
   constructor() { }
 
   ngOnInit(): void {
