@@ -10,6 +10,9 @@ export class CreateComponent implements OnInit {
   Title: string = "Create Employee";
   Name: string = "";
   Email: string = "";
+  Gender: string = "";
+  phoneNumber: number;
+  contactPreference: string = "";
   constructor() { }
 
   ngOnInit(): void {

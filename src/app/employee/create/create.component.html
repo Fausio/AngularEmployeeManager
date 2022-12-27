@@ -1,10 +1,10 @@
 <form #CreateEmploye="ngForm" (ngSubmit)="CreateEmployee(CreateEmploye)">
-    <div class="card rounded-0 mb-2"> 
+    <div class="card rounded-0 mb-2">
         <h5 class="card-header  bg-primary text-white rounded-0">{{Title}}</h5>
         <div class="card-body">
             <div class="col">
                 <div class="form-group">
-                     <label for="Name">Name</label>
+                    <label for="Name">Name</label>
                     <input name="Name" [(ngModel)]="Name" id="Name" type="text" class="form-control" />
                 </div>
 
@@ -12,7 +12,45 @@
                     <label for="Email">Email</label>
                     <input name="Email" [(ngModel)]="Email" id="Email" type="email" class="form-control" />
                 </div>
-            </div> 
+
+                <div class="form-group">
+                    <label for="phoneNumber">Phone number</label>
+                    <input name="phoneNumber" [(ngModel)]="phoneNumber" id="phoneNumber" type="number"
+                        class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label>Contact Preference</label>
+                    <div class="form-control">
+                        <label class="radio-inline  ">
+                            <input type="radio" value="Email" class="mx-2" name="contactPreference" [(ngModel)]="contactPreference">
+                            Email
+                        </label>
+
+                        <label class="radio-inline ">
+                            <input type="radio" value="PhoneNumber" class="mx-2" name="contactPreference" [(ngModel)]="contactPreference">
+                            phoneNumber
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Gender</label>
+                    <div class="form-control">
+                        <label class="radio-inline  ">
+                            <input type="radio" value="Male" class="mx-2" name="Gender" [(ngModel)]="Gender">
+                            Male
+                        </label>
+
+                        <label class="radio-inline ">
+                            <input type="radio" value="Female" class="mx-2" name="Gender" [(ngModel)]="Gender">
+                            Female
+                        </label>
+                    </div>
+                </div>
+
+               
+            </div>
         </div>
         <div class="card-footer">
             <button type="submit" class="btn btn-primary rounded-0">Save</button>
