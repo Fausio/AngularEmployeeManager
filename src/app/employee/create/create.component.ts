@@ -13,6 +13,7 @@ export class CreateComponent implements OnInit {
   Gender: string = "";
   phoneNumber: number;
   contactPreference: string = "PhoneNumber";
+  IsActive: boolean = true;
   constructor() { }
 
   ngOnInit(): void {
