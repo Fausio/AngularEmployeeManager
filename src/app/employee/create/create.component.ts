@@ -1,3 +1,4 @@
+import { NgForm } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./create.component.css']
 })
 export class CreateComponent implements OnInit {
-
+  Title: string = "Create Employee";
+  Name: string = "";
+  Email: string = "";
   constructor() { }
 
   ngOnInit(): void {
   }
 
+
+  CreateEmployee(model: NgForm): void {
+    console.log("data", model);
+    console.log("value", model.value);
+  }
 }

@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { ListComponent } from './employee/list/list.component';
 import { NavMenuComponent } from './nav/nav-menu/nav-menu.component';
 import { CreateComponent } from './employee/create/create.component';
+import { FormsModule } from '@angular/forms';
 
 const appRouts: Route[] = [
   {path: 'employee-list' , component: ListComponent},
@@ -25,6 +26,7 @@ const appRouts: Route[] = [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(appRouts),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,1 +1,25 @@
-<p>create works!</p>
+<form #CreateEmploye="ngForm" (ngSubmit)="CreateEmployee(CreateEmploye)">
+    <div class="card rounded-0 mb-2"> 
+        <h5 class="card-header  bg-primary text-white rounded-0">{{Title}}</h5>
+        <div class="card-body">
+            <div class="col">
+                <div class="form-group">
+                     <label for="Name">Name</label>
+                    <input name="Name" [(ngModel)]="Name" id="Name" type="text" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="Email">Email</label>
+                    <input name="Email" [(ngModel)]="Email" id="Email" type="email" class="form-control" />
+                </div>
+            </div> 
+        </div>
+        <div class="card-footer">
+            <button type="submit" class="btn btn-primary rounded-0">Save</button>
+        </div>
+    </div>
+</form>
+
+{{CreateEmploye.value }}
+<hr>
+{{CreateEmploye.value |json}}
