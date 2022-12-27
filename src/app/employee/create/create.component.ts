@@ -14,6 +14,8 @@ export class CreateComponent implements OnInit {
   phoneNumber: number;
   contactPreference: string = "PhoneNumber";
   IsActive: boolean = true;
+  Department: string = "Help Desk";
+
   constructor() { }
 
   ngOnInit(): void {

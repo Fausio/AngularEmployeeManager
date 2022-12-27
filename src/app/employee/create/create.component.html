@@ -51,16 +51,30 @@
                     </div>
                 </div>
 
-                <div class="form-group"> 
+                <div class="form-group">
                     <label> </label>
                     <div class="form-control">
                         <label class="checkbox-inline  ">
-                            <input type="checkbox"  name="IsActive"  [(ngModel)]="IsActive">
+                            <input type="checkbox" name="IsActive" [(ngModel)]="IsActive">
                             Is active
-                        </label> 
+                        </label>
                     </div>
                 </div>
 
+
+                <div class="form-group">
+                    <label for="Department"> Department </label>
+                    
+                    <select name="Department" id="Department" [(ngModel)]="Department" class="form-control">
+                        <option value="Help Desk">Help Desk</option>
+                        <option value="RH">RH</option>
+                        <option value="IT">IT</option>
+                        <option value="Paroll">Paroll</option>
+                    </select>
+                       
+                
+                </div>
+                
             </div>
         </div>
         <div class="card-footer">
