@@ -2,3 +2,8 @@
     width: 200px;
     height: 200px;
 }
+
+.vertial-center{
+    display: flex;
+    align-items: center;
+}

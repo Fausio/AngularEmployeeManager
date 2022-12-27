@@ -1,105 +1,102 @@
-<!-- <div class="panel panel-primary" *ngFor="let model of employees">
 
-    <div class="panel-heading">
-        <h3 class="panel-title">{{model.name}}</h3>
-    </div>
-</div> -->
+<div class="mt-2">
+    <div class="card rounded-0 mb-2" *ngFor="let model of employees">
 
-<div class="card rounded-0 mb-2" *ngFor="let model of employees">
-
-    <h5 class="card-header  bg-primary text-white rounded-0">{{model.name}}</h5>
-    <div class="card-body">
+        <h5 class="card-header  bg-primary text-white rounded-0">{{model.name}}</h5>
+        <div class="card-body">
 
 
-        <div class="col">
-            <div class="row ">
-                <div class="col-4 ">
-                    <img class="listImg" [src]="model.photoPath" />
+            <div class="col">
+                <div class="row vertial-center">
+                    <div class="col-4 ">
+                        <img class="listImg" [src]="model.photoPath" />
+                    </div>
+
+                    <div class="col-8">
+
+                        <div class="row ">
+                            <div class="col-6">
+                                <b>Name</b>
+                            </div>
+                            <div class="col-6">
+                                : {{model.name}}
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-6">
+                                <b>Gender</b>
+                            </div>
+                            <div class="col-6">
+                                : {{model.gender}}
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-6">
+                                <b>Email</b>
+                            </div>
+                            <div class="col-6">
+                                : {{model.email}}
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-6">
+                                <b>Phone number</b>
+                            </div>
+                            <div class="col-6">
+                                : {{model.phoneNumber}}
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-6">
+                                <b>Contact preference</b>
+                            </div>
+                            <div class="col-6">
+                                : {{model.contactPreference}}
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-6">
+                                <b>Date of birth</b>
+                            </div>
+                            <div class="col-6">
+                                : {{model.dateOBirth |date}}
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-6">
+                                <b>Department</b>
+                            </div>
+                            <div class="col-6">
+                                : {{model.department}}
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-6">
+                                <b>is Active ?</b>
+                            </div>
+                            <div class="col-6">
+                                : {{model.isActive}}
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
                 </div>
 
-                <div class="col-8">
-                   
-                    <div class="row ">
-                        <div class="col-6">
-                         <b>Name</b> 
-                        </div>
-                        <div class="col-6">
-                            : {{model.name}}
-                          </div>
-                    </div> 
-
-                    <div class="row">
-                        <div class="col-6">
-                         <b>Gender</b> 
-                        </div>
-                        <div class="col-6">
-                            : {{model.gender}}
-                          </div>
-                    </div> 
-
-                    <div class="row">
-                        <div class="col-6">
-                         <b>Email</b> 
-                        </div>
-                        <div class="col-6">
-                            : {{model.email}}
-                          </div>
-                    </div> 
-
-                    <div class="row">
-                        <div class="col-6">
-                         <b>Phone number</b> 
-                        </div>
-                        <div class="col-6">
-                            : {{model.phoneNumber}}
-                          </div>
-                    </div> 
-
-                    <div class="row">
-                        <div class="col-6">
-                         <b>Contact preference</b> 
-                        </div>
-                        <div class="col-6">
-                            : {{model.contactPreference}}
-                          </div>
-                    </div> 
-
-                    <div class="row">
-                        <div class="col-6">
-                         <b>Date of birth</b> 
-                        </div>
-                        <div class="col-6">
-                            : {{model.dateOBirth |date}}
-                          </div>
-                    </div> 
-
-
-                    <div class="row">
-                        <div class="col-6">
-                         <b>Department</b> 
-                        </div>
-                        <div class="col-6">
-                            : {{model.department}}
-                          </div>
-                    </div> 
-
-
-                    <div class="row">
-                        <div class="col-6">
-                         <b>is Active ?</b> 
-                        </div>
-                        <div class="col-6">
-                            : {{model.isActive}}
-                          </div>
-                    </div> 
-
- 
-
-                </div>
- 
             </div>
 
-        </div>
 
+        </div>
 
     </div>
