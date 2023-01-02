@@ -17,7 +17,7 @@ export class CreateComponent implements OnInit {
   contactPreference: string = "PhoneNumber";
   IsActive: boolean = true;
   Department: number = 1;
-  DeteOfBirh: Date;
+  DeteOfBirh: Date = new Date();
 
   colorTheme = 'theme-dark-blue';
   bsConfig?: Partial<BsDatepickerConfig>;
@@ -36,7 +36,8 @@ export class CreateComponent implements OnInit {
          containerClass: this.colorTheme ,
          showWeekNumbers:true,
          showTodayButton: true,
-         maxDate: new Date()
+         maxDate: new Date(),
+         dateInputFormat: 'DD/MM/YYYY'
         
         }        );
   }
