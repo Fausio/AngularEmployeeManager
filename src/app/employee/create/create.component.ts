@@ -1,6 +1,7 @@
 import { NgForm } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Department } from 'src/app/models/Department/Department.model'
+import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 
 @Component({
   selector: 'app-create',
@@ -18,13 +19,20 @@ export class CreateComponent implements OnInit {
   Department: number = 1;
   DeteOfBirh: Date;
 
+  colorTheme = 'theme-dark-blue';
+  bsConfig?: Partial<BsDatepickerConfig>;
+
+
+
   departments: Department[] = [
     { id: 1, Name: "Help Desk" },
     { id: 2, Name: "RH" },
     { id: 3, Name: "IT" },
     { id: 4, Name: "Logistic" },
   ]
-  constructor() { }
+  constructor() {
+    this.bsConfig = Object.assign({}, { containerClass: this.colorTheme });
+  }
 
   ngOnInit(): void {
   }
