@@ -16,6 +16,7 @@ export class CreateComponent implements OnInit {
   contactPreference: string = "PhoneNumber";
   IsActive: boolean = true;
   Department: number = 1;
+  DeteOfBirh: Date;
 
   departments: Department[] = [
     { id: 1, Name: "Help Desk" },
