@@ -38,6 +38,7 @@ export class CreateComponent implements OnInit {
          showTodayButton: true,
          maxDate: new Date(),
          dateInputFormat: 'DD/MM/YYYY'
+         
         
         }        );
   }
