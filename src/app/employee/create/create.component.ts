@@ -31,7 +31,14 @@ export class CreateComponent implements OnInit {
     { id: 4, Name: "Logistic" },
   ]
   constructor() {
-    this.bsConfig = Object.assign({}, { containerClass: this.colorTheme });
+    this.bsConfig = Object.assign({}, 
+      {
+         containerClass: this.colorTheme ,
+         showWeekNumbers:true,
+         showTodayButton: true,
+         maxDate: new Date()
+        
+        }        );
   }
 
   ngOnInit(): void {
