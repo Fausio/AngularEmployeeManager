@@ -18,10 +18,12 @@ export class CreateComponent implements OnInit {
   IsActive: boolean = true;
   Department: number = 1;
   DeteOfBirh: Date = new Date();
-
+  PhotoPath: string;
   colorTheme = 'theme-dark-blue';
   bsConfig?: Partial<BsDatepickerConfig>;
 
+  previewPhoto: boolean = false;
+  previewPhotoBtnTitle: string = "Show Preview"
 
 
   departments: Department[] = [
@@ -31,16 +33,28 @@ export class CreateComponent implements OnInit {
     { id: 4, Name: "Logistic" },
   ]
   constructor() {
-    this.bsConfig = Object.assign({}, 
+
+    this.bsConfig = Object.assign({},
       {
-         containerClass: this.colorTheme ,
-         showWeekNumbers:true,
-         showTodayButton: true,
-         maxDate: new Date(),
-         dateInputFormat: 'DD/MM/YYYY'
-         
-        
-        }        );
+        containerClass: this.colorTheme,
+        showWeekNumbers: true,
+        showTodayButton: true,
+        maxDate: new Date(),
+        dateInputFormat: 'DD/MM/YYYY'
+
+
+      });
+  }
+
+  ChangePreviewPhotoValue(): void {
+
+    this.previewPhoto = !this.previewPhoto;
+
+    if (this.previewPhoto) {
+      this.previewPhotoBtnTitle = "Hide Preview"
+    } else {
+      this.previewPhotoBtnTitle = "Show Preview"
+    }
   }
 
   ngOnInit(): void {

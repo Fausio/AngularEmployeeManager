@@ -52,12 +52,28 @@
                 </div>
 
                 <div class="row">
-                <div class="form-group col-md-4">
-                    <label for="DeteOfBirh">Date of birth</label>
-                    <input name="DeteOfBirh" [(ngModel)]="DeteOfBirh" id="DeteOfBirh" type="text" placement="right"  bsDatepicker [bsConfig]="bsConfig" class="form-control"  />
-                </div>
+                    <div class="form-group col-md-4">
+                        <label for="DeteOfBirh">Date of birth</label>
+                        <input name="DeteOfBirh" [(ngModel)]="DeteOfBirh" id="DeteOfBirh" type="text" placement="right"
+                            bsDatepicker [bsConfig]="bsConfig" class="form-control" />
+                    </div>
                 </div>
 
+                <div class="form-group">
+                    <label for="PhotoPath">Photo Path</label>
+                    <input name="PhotoPath" [(ngModel)]="PhotoPath" id="PhotoPath" type="text" class="form-control" />
+                </div>
+ 
+                <div class="form-group">
+                  <img [src]="PhotoPath" height="200" width="200"  *ngIf="previewPhoto">
+                </div>
+
+                 <div class="form-group">
+                  <button class="btn btn-primary mt-2" (click)="ChangePreviewPhotoValue()" type="button">
+                    {{previewPhotoBtnTitle}}
+                  </button>
+                </div>
+  
                 <div class="form-group">
                     <label> </label>
                     <div class="form-control">
@@ -67,6 +83,7 @@
                         </label>
                     </div>
                 </div>
+
 
 
                 <div class="form-group">
@@ -88,5 +105,5 @@
         </div>
     </div>
 </form>
- 
+
 {{CreateEmploye.value |json}}
