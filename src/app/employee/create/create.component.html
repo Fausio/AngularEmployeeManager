@@ -3,9 +3,12 @@
         <h5 class="card-header  bg-primary text-white rounded-0">{{Title}}</h5>
         <div class="card-body">
             <div class="col">
-                <div class="form-group">
-                    <label for="Name">Name</label>
-                    <input name="Name" [(ngModel)]="Name" id="Name" type="text" class="form-control" #NameControl="ngModel" />
+                <div class="form-group" [class.has-error]="NameControl.invalid && NameControl.touched" >
+                    <label class="control-label" for="Name">Name</label>
+                    <input required name="Name" [(ngModel)]="Name" id="Name" type="text" class="form-control"
+                           #NameControl="ngModel" 
+                           />
+                    <span class="help-block" *ngIf="NameControl.invalid && NameControl.touched"> Name is requered</span>
                 </div>
 
                 <div class="form-group">
@@ -106,30 +109,6 @@
     </div>
 </form>
 
-<table border="1" style="border-collapse:collapse; table-layout: fixed;">
-    <tr style="background-color: rgb(170, 120, 12); font-weight: bold;">
-        <td colspan="3" style="padding-left: 3px; white-space: nowrap; width: 100%;">
-            <h4>
-                Full name field
-            </h4>
-        </td>
-    </tr>
-    <tr style="background-color: rgb(212, 149, 13); font-weight: bold;">
-        <td  style="padding-left: 10px; white-space: nowrap; width: 33%;">
-           <div>touched:  {{ NameControl.touched }} </div>
-           <div>untouched:  {{ NameControl.untouched }}</div>
-        </td>
 
-        <td  style="padding-left: 10px; white-space: nowrap; width: 33%;">
-            <div>pristine:  {{ NameControl.pristine }} </div>
-            <div>dirty:  {{ NameControl.dirty }}</div>
-         </td>
-
-         <td  style="padding-left: 10px; white-space: nowrap; width: 33%;">
-            <div>valid:  {{ NameControl.valid }} </div>
-            <div>invalid:  {{ NameControl.invalid }}</div>
-         </td>
-    </tr>
-</table>
 
 {{CreateEmploye.value |json}}
