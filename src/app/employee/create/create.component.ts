@@ -2,6 +2,7 @@ import { NgForm } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Department } from 'src/app/models/Department/Department.model'
 import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
+import { Employee } from 'src/app/models/employee/employee.model';
 
 @Component({
   selector: 'app-create',
@@ -9,16 +10,19 @@ import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
   styleUrls: ['./create.component.css']
 })
 export class CreateComponent implements OnInit {
-  Title: string = "Create Employee";
-  Name: string = "";
-  Email: string = "";
-  Gender: string = "";
-  phoneNumber: number;
-  contactPreference: string = "PhoneNumber";
-  IsActive: boolean = true;
-  Department: number = 1;
-  DeteOfBirh: Date = new Date();
-  PhotoPath: string;
+
+  employee: Employee = {
+    id: 0,
+    name: '',
+    gender: '',
+    contactPreference: 1,
+    dateOBirth: new Date(),
+    department: '',
+    isActive: true  
+  }
+
+  Title: string = "Create Employee";  
+    
   colorTheme = 'theme-dark-blue';
   bsConfig?: Partial<BsDatepickerConfig>;
 
@@ -62,7 +66,7 @@ export class CreateComponent implements OnInit {
 
 
   CreateEmployee(model: NgForm): void {
-    console.log("data", model);
-    console.log("value", model.value);
+    console.log("data:form.value", model.value);
+    console.log("data: employee", this.employee);
   }
 }

@@ -3,22 +3,22 @@
         <h5 class="card-header  bg-primary text-white rounded-0">{{Title}}</h5>
         <div class="card-body">
             <div class="col">
-                <div class="form-group" [class.has-error]="NameControl.invalid && NameControl.touched" [class.has-valid]="NameControl.valid">
-                    <label class="control-label" for="Name">Name</label>
-                    <input required name="Name" [(ngModel)]="Name" id="Name" type="text" class="form-control"
-                           #NameControl="ngModel" 
-                           />
+                <div class="form-group" [class.has-error]="NameControl.invalid && NameControl.touched"
+                    [class.has-valid]="NameControl.valid">
+                    <label class="control-label" for="name">Name</label>
+                    <input required name="name" [(ngModel)]="employee.name" id="name" type="text" class="form-control"
+                        #NameControl="ngModel" />
                     <span class="help-block" *ngIf="NameControl.invalid && NameControl.touched"> Name is requered</span>
                 </div>
 
                 <div class="form-group">
                     <label for="Email">Email</label>
-                    <input name="Email" [(ngModel)]="Email" id="Email" type="email" class="form-control" />
+                    <input name="Email" [(ngModel)]="employee.email" id="Email" type="email" class="form-control" />
                 </div>
 
                 <div class="form-group">
                     <label for="phoneNumber">Phone number</label>
-                    <input name="phoneNumber" [(ngModel)]="phoneNumber" id="phoneNumber" type="number"
+                    <input name="phoneNumber" [(ngModel)]="employee.phoneNumber" id="phoneNumber" type="number"
                         class="form-control" />
                 </div>
 
@@ -27,13 +27,13 @@
                     <div class="form-control">
                         <label class="radio-inline  ">
                             <input type="radio" value="Email" class="mx-2" name="contactPreference"
-                                [(ngModel)]="contactPreference">
+                                [(ngModel)]="employee.contactPreference">
                             Email
                         </label>
 
                         <label class="radio-inline ">
                             <input type="radio" value="PhoneNumber" class="mx-2" name="contactPreference"
-                                [(ngModel)]="contactPreference">
+                                [(ngModel)]="employee.contactPreference">
                             phoneNumber
                         </label>
                     </div>
@@ -43,12 +43,12 @@
                     <label>Gender</label>
                     <div class="form-control">
                         <label class="radio-inline  ">
-                            <input type="radio" value="Male" class="mx-2" name="Gender" [(ngModel)]="Gender">
+                            <input type="radio" value="Male" class="mx-2" name="Gender" [(ngModel)]="employee.gender">
                             Male
                         </label>
 
                         <label class="radio-inline ">
-                            <input type="radio" value="Female" class="mx-2" name="Gender" [(ngModel)]="Gender">
+                            <input type="radio" value="Female" class="mx-2" name="Gender" [(ngModel)]="employee.gender">
                             Female
                         </label>
                     </div>
@@ -57,18 +57,18 @@
                 <div class="row">
                     <div class="form-group col-md-4">
                         <label for="DeteOfBirh">Date of birth</label>
-                        <input name="DeteOfBirh" [(ngModel)]="DeteOfBirh" id="DeteOfBirh" type="text" placement="right"
+                        <input name="DeteOfBirh" [(ngModel)]="employee.dateOBirth" id="DeteOfBirh" type="text" placement="right"
                             bsDatepicker [bsConfig]="bsConfig" class="form-control" />
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="PhotoPath">Photo Path</label>
-                    <input name="PhotoPath" [(ngModel)]="PhotoPath" id="PhotoPath" type="text" class="form-control" />
+                    <input name="PhotoPath" [(ngModel)]="employee.photoPath" id="PhotoPath" type="text" class="form-control" />
                 </div>
 
                 <div class="form-group">
-                    <img [src]="PhotoPath" height="200" width="200" *ngIf="previewPhoto">
+                    <img [src]="employee.photoPath" height="200" width="200" *ngIf="previewPhoto">
                 </div>
 
                 <div class="form-group">
@@ -81,7 +81,7 @@
                     <label> </label>
                     <div class="form-control">
                         <label class="checkbox-inline  ">
-                            <input type="checkbox" name="IsActive" [(ngModel)]="IsActive">
+                            <input type="checkbox" name="IsActive" [(ngModel)]="employee.isActive">
                             Is active
                         </label>
                     </div>
@@ -92,7 +92,7 @@
                 <div class="form-group">
                     <label for="Department"> Department </label>
 
-                    <select name="Department" id="Department" [(ngModel)]="Department" class="form-control">
+                    <select name="Department" id="Department" [(ngModel)]="employee.department" class="form-control">
                         <option *ngFor="let department of departments" value="{{department.id}}">
                             {{department.Name}}
                         </option>
@@ -104,7 +104,7 @@
             </div>
         </div>
         <div class="card-footer">
-            <button type="submit" class="btn btn-primary rounded-0" [disabled]="CreateEmploye.invalid" >Save</button>
+            <button type="submit" class="btn btn-primary rounded-0" [disabled]="CreateEmploye.invalid">Save</button>
         </div>
     </div>
 </form>
@@ -112,3 +112,5 @@
 
 
 {{CreateEmploye.value |json}}
+<hr>
+{{employee |json}}
