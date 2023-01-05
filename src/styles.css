@@ -6,9 +6,16 @@ body {
 .has-error{
    color: red;
 } 
- 
- 
 input.ng-invalid.ng-touched
 {
-    border: 1px solid red !important; 
+    border: 2px solid red !important; 
 }
+.has-valid{
+  color: green;
+}
+ 
+input.ng-valid.ng-touched
+{
+    border: 2px solid green !important; 
+}
+ 

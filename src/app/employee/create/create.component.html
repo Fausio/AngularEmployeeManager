@@ -3,7 +3,7 @@
         <h5 class="card-header  bg-primary text-white rounded-0">{{Title}}</h5>
         <div class="card-body">
             <div class="col">
-                <div class="form-group" [class.has-error]="NameControl.invalid && NameControl.touched" >
+                <div class="form-group" [class.has-error]="NameControl.invalid && NameControl.touched" [class.has-valid]="NameControl.valid">
                     <label class="control-label" for="Name">Name</label>
                     <input required name="Name" [(ngModel)]="Name" id="Name" type="text" class="form-control"
                            #NameControl="ngModel" 
